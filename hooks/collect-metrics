@@ -13,6 +13,8 @@ def build_command(doc):
     values = {}
     metrics = doc.get("metrics", {})
     for metric, mdoc in metrics.items():
+        if not mdoc:
+            continue
         cmd = mdoc.get("command")
         if cmd:
             try:
